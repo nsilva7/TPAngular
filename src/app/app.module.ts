@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule }   from '@angular/router';
+import { RouterModule, Routes }   from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -11,6 +11,7 @@ import { AngularFireModule } from 'angularfire2';
 import { ProductosComponent } from './productos/productos.component';
 import { CrearProductoComponent } from './crear-producto/crear-producto.component';
 import { ProductoService } from './productos/producto.service';
+import { Producto } from './productos/producto';
 
 export const environment = {
   production: false,
@@ -24,28 +25,25 @@ export const environment = {
   }
 };
 
+const appRoutes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'productos/crear',component: CrearProductoComponent },
+  { path: 'productos', component: ProductosComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProductosComponent,
-    CrearProductoComponent
+    CrearProductoComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    RouterModule.forRoot([
-      {
-        path: 'login',
-        component: LoginComponent
-      },
-      {
-        path: 'productos',
-        component: CrearProductoComponent
-      }
-    ])
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [AuthService,AngularFireAuth,ProductoService],
   bootstrap: [AppComponent],
