@@ -1,18 +1,18 @@
 <div class="container">
   <label>Codigo:</label>
-  <input type="text" [(ngModel)]="codigo" >
+  <input type="text" [(ngModel)]="producto.codigo" >
   <label>Nombre:</label>
-  <input type="text" [(ngModel)]="nombre" >
+  <input type="text" [(ngModel)]="producto.nombre" >
   <label>Descripcion:</label>
-  <input type="text" [(ngModel)]="descripcion" >
+  <input type="text" [(ngModel)]="producto.descripcion" >
   <label>tipo:</label>
-  <input type="number" [(ngModel)]="tipo" >
+  <input type="number" [(ngModel)]="producto.tipo" >
   <label>precio:</label>
-  <input type="number" [(ngModel)]="precio" >
+  <input type="number" [(ngModel)]="producto.precio" >
   <label>foto:</label>
-  <input type="text" [(ngModel)]="foto" >
+  <input type="text" [(ngModel)]="producto.foto" >
   <label>Stock:</label>
-  <input type="number" [(ngModel)]="stock" >
+  <input type="number" [(ngModel)]="producto.stock" >
   <button (click)="crear()">
     Crear
   </button>

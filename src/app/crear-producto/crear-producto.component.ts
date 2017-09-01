@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../productos/producto.service';
+import { Producto } from '../productos/producto';
 
 @Component({
   selector: 'app-crear-producto',
@@ -7,19 +8,17 @@ import { ProductoService } from '../productos/producto.service';
   styleUrls: ['./crear-producto.component.css'],
 })
 export class CrearProductoComponent {
-  codigo:string;
-  nombre:string;
-  descripcion:string;
-  precio:number;
-  foto:string;
-  tipo:number;
-  stock:number;
+  producto:Producto;
+  lista:any;
 
-  constructor(public ps: ProductoService) { }
+  constructor(public ps: ProductoService) {
+    this.producto = new Producto;
+  }
 
   crear() {
-    this.ps.crearProducto(this.codigo,this.nombre,this.descripcion,this.precio,this.foto,this.tipo,this.stock);
+    this.ps.crearProducto(this.producto);
   }
+
 
 
 }
