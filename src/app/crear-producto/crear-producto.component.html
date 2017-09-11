@@ -1,20 +1,20 @@
 <div class="container">
-  <label>Codigo:</label>
-  <input type="text" [(ngModel)]="producto.codigo" >
-  <label>Nombre:</label>
-  <input type="text" [(ngModel)]="producto.nombre" >
-  <label>Descripcion:</label>
-  <input type="text" [(ngModel)]="producto.descripcion" >
-  <label>tipo:</label>
-  <input type="number" [(ngModel)]="producto.tipo" >
-  <label>precio:</label>
-  <input type="number" [(ngModel)]="producto.precio" >
-  <label>foto:</label>
-  <input type="text" [(ngModel)]="producto.foto" >
-  <label>Stock:</label>
-  <input type="number" [(ngModel)]="producto.stock" >
-  <button (click)="crear()">
+  <div><label>Codigo:</label>
+  <input type="text" [(ngModel)]="producto.codigo"></div>
+  <div><label>Nombre:</label>
+  <input type="text" [(ngModel)]="producto.nombre"></div>
+  <div><label>Descripcion:</label>
+  <input type="text" [(ngModel)]="producto.descripcion"></div>
+  <div><label>Tipo:</label>
+  <input type="number" [(ngModel)]="producto.tipo"></div>
+  <div><label>Precio:</label>
+  <input type="number" [(ngModel)]="producto.precio"></div>
+  <div><label >Foto</label>
+  <input type="text" [(ngModel)]="producto.foto"/></div>
+  <div><label>Stock:</label>
+  <input type="number" [(ngModel)]="producto.stock"></div>
+  <div class="botones"><button (click)="crear()">
     Crear
-  </button>
+  </button></div>
 
 </div>

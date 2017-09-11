@@ -1,15 +1,20 @@
 <div class="container">
-  <label>Email:</label>
-  <input type="text" [(ngModel)]="email" placeholder="email">
-  <label>Password:</label>
-  <input type="password" [(ngModel)]="password" placeholder="password">
-  <button (click)="registro()">
+  <div><label>Email:</label>
+  <input type="text" class="entrada" [(ngModel)]="email" placeholder="email">
+  </div>
+
+  <div><label>Password:</label>
+  <input type="password" class="entrada" [(ngModel)]="password" placeholder="password">
+  </div>
+  <div class="botones">
+  <button class = "button" (click)="registro()">
     Signup
   </button>
-  <button (click)="login()">
+  <button class = "button" (click)="login()">
     Login
   </button>
-  <button (click)="logout()">
+  <button class = "button" (click)="logout()">
     Logout
   </button>
+  </div>
 </div>
