@@ -1,0 +1,15 @@
+<div *ngIf="currentUpload">
+    <progress class="progress is-success" min=1 max=100 value="{{ currentUpload?.progress }}"></progress>
+    Progreso: {{currentUpload?.name}} | {{currentUpload?.progress}}% Completo
+</div>
+<div class="box">
+    <h3>Fotos:</h3>
+    <label>
+       <input type="file" class="button" (change)="detectFiles($event)" multiple>
+    </label>
+      <button class="button is-primar"
+              [disabled]="!selectedFiles"
+              (click)="uploadMulti()">
+        Upload Multiple
+      </button>
+</div>

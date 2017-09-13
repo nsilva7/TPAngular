@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../productos/producto.service';
 import { Producto } from '../productos/producto';
+import { UploadService} from '../uploads/shared/upload.service';
 
 @Component({
   selector: 'app-crear-producto',
@@ -17,6 +18,7 @@ export class CrearProductoComponent {
 
   crear() {
     this.ps.crearProducto(this.producto);
+
   }
 
 

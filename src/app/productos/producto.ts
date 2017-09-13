@@ -4,6 +4,7 @@ export class Producto {
   descripcion:string;
   precio:number;
   foto:string;
+  color:string;
   tipo:number;
   stock:number;
 }

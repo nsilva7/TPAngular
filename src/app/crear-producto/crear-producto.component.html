@@ -9,10 +9,11 @@
   <input type="number" [(ngModel)]="producto.tipo"></div>
   <div><label>Precio:</label>
   <input type="number" [(ngModel)]="producto.precio"></div>
-  <div><label >Foto</label>
-  <input type="text" [(ngModel)]="producto.foto"/></div>
+  <div><label>Color:</label>
+  <input [(colorPicker)]="color" [style.background]="color" [value]="color"/></div>
   <div><label>Stock:</label>
   <input type="number" [(ngModel)]="producto.stock"></div>
+  <upload-form></upload-form><br>
   <div class="botones"><button (click)="crear()">
     Crear
   </button></div>
