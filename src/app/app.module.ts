@@ -17,6 +17,7 @@ import { UploadService } from './uploads/shared/upload.service'
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { CatalogoComponent } from './catalogo/catalogo.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 export const environment = {
   production: false,
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot(appRoutes),
     ColorPickerModule,
-    AngularFireDatabaseModule 
+    AngularFireDatabaseModule,
+    Ng2SmartTableModule 
   ],
   providers: [AuthService,AngularFireAuth,ProductoService,UploadService,],
   bootstrap: [AppComponent],

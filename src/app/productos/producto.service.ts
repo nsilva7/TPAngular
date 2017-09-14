@@ -23,12 +23,13 @@ export class ProductoService {
                   tipo:this.tipos[0],
                   stock:producto.stock
                 }
-        
+
 
     this.http.post(this.productosUrl,body).subscribe();
   }
 
   listarProductos() {
+    this.lista=[];
     this.http.get(this.productosUrl).subscribe(data => {
       let producto:Producto;
       let dat = new Data;
