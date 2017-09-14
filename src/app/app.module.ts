@@ -13,9 +13,6 @@ import { CrearProductoComponent } from './crear-producto/crear-producto.componen
 import { ProductoService } from './productos/producto.service';
 import { Producto } from './productos/producto';
 import {ColorPickerModule} from 'angular4-color-picker';
-import { UploadsListComponent } from './uploads/uploads-list/uploads-list.component';
-import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
-import { UploadDetailComponent } from './uploads/upload-detail/upload-detail.component'
 import { UploadService } from './uploads/shared/upload.service'
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
@@ -36,7 +33,6 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'productos/crear',component: CrearProductoComponent },
   { path: 'productos', component: ProductosComponent },
-  { path: 'upload', component: UploadFormComponent }
 
 ];
 
@@ -46,10 +42,7 @@ const appRoutes: Routes = [
     LoginComponent,
     ProductosComponent,
     CrearProductoComponent,
-    UploadsListComponent,
-    UploadFormComponent,
-    UploadDetailComponent,
-
+    
   ],
   imports: [
     BrowserModule,

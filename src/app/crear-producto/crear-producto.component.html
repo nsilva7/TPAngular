@@ -13,7 +13,22 @@
   <input [(colorPicker)]="color" [style.background]="color" [value]="color"/></div>
   <div><label>Stock:</label>
   <input type="number" [(ngModel)]="producto.stock"></div>
-  <upload-form></upload-form><br>
+  <div><label>Dimensiones:</label>
+  <input type="text" [(ngModel)]="producto.dimensiones"></div>
+  <div><label>Peso:</label>
+  <input type="number" [(ngModel)]="producto.peso"></div>
+  <div><label>Caracteristicas:</label>
+  <textarea [(ngModel)]="producto.caracteristicas"></textarea></div>
+  <div class="box">
+      <h3>Fotos:</h3>
+      <label>
+         <input type="file" class="button" (change)="detectFiles($event)" multiple>
+      </label>
+  </div>
+  <div *ngIf="currentUpload">
+      <progress class="progress is-success" min=1 max=100 value="{{ currentUpload?.progress }}"></progress>
+      Progreso: {{currentUpload?.progress}}% Completo
+  </div>
   <div class="botones"><button (click)="crear()">
     Crear
   </button></div>

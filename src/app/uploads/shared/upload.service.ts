@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Upload } from './upload';
+import { Producto} from '../../productos/producto'
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import * as firebase from 'firebase';
 
@@ -30,7 +31,7 @@ export class UploadService {
   }
 
   // Executes the file uploading to firebase https://firebase.google.com/docs/storage/web/upload-files
-  pushUpload(upload: Upload) {
+  pushUpload(upload: Upload, producto:Producto) {
     const storageRef = firebase.storage().ref();
     const uploadTask = storageRef.child(`${this.basePath}/${upload.file.name}`).put(upload.file);
 
@@ -48,10 +49,10 @@ export class UploadService {
         // upload success
         upload.url = uploadTask.snapshot.downloadURL
         upload.name = upload.file.name
-        this.saveFileData(upload)
-        return undefined
+        producto.foto.push(upload.url);
       }
     );
+    return producto;
   }
 
 
