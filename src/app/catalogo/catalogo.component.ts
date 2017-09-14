@@ -1,16 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductoService } from '../productos/producto.service'
+import { Component, OnInit, Input } from '@angular/core';
+import { ProductoService } from '../productos/producto.service';
+import { Producto } from '../productos/producto';
 @Component({
   selector: 'app-catalogo',
   templateUrl: './catalogo.component.html',
   styleUrls: ['./catalogo.component.css']
 })
+
 export class CatalogoComponent implements OnInit {
-  lista = [];
-  constructor(public ps: ProductoService) { }
+  private producto:Producto;
+  private lista = [];
+  private productoActual:Producto
+  constructor(public ps:ProductoService) {
+    this.producto = new Producto;
+    this.productoActual = new Producto;
+  }
 
   ngOnInit() {
-   
+    this.lista = this.ps.listarProductos();
+  }
+  seleccionarProducto(p:Producto){
+    this.productoActual = p;
   }
 
 }

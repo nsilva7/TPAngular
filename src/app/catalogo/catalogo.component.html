@@ -1,3 +1,55 @@
-<p>
-  catalogo works!
-</p>
+<!-- Page Content -->
+<div class="container">
+     <!-- Page Features -->
+      <div class="row text-center">
+        <div class="col-lg-3 col-md-6 mb-4" *ngFor="let producto of lista">
+          <div class="card">
+            <a href="#" data-toggle="modal" data-target="#exampleModal" (click)="seleccionarProducto(producto)">
+            <img class="card-img-top" src={{producto.foto[0]}} alt="">
+            <div class="card-body">
+              <h4 class="card-title">{{producto.nombre}}</h4>
+              <p class="card-text">{{producto.stock}} unidades en stock</p>
+              <p class="card-text">{{producto.precio}}$</p>
+            </div>
+            </a>
+            <div class="card-footer">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">Add to car!</button>
+                  </span>
+                  <input type="text" class="form-control" placeholder="Cantidad" aria-label="Cantidad">
+               </div>
+             </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{productoActual.nombre}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{productoActual.nombre}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>

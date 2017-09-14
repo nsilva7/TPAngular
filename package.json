@@ -23,11 +23,13 @@
     "@angular/router": "^4.2.4",
     "angular4-color-picker": "^1.4.2",
     "angularfire2": "^4.0.0-rc.2",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "firebase": "^4.3.0",
     "ng-table": "^3.0.1",
     "ng2-smart-table": "^1.2.1",
     "rxjs": "^5.4.2",
+    "startbootstrap-heroic-features": "^4.0.0-alpha",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

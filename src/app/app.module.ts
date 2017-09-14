@@ -16,6 +16,7 @@ import {ColorPickerModule} from 'angular4-color-picker';
 import { UploadService } from './uploads/shared/upload.service'
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
+import { CatalogoComponent } from './catalogo/catalogo.component';
 
 export const environment = {
   production: false,
@@ -33,7 +34,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'productos/crear',component: CrearProductoComponent },
   { path: 'productos', component: ProductosComponent },
-
+  { path: 'catalogo', component: CatalogoComponent}
 ];
 
 @NgModule({
@@ -42,7 +43,7 @@ const appRoutes: Routes = [
     LoginComponent,
     ProductosComponent,
     CrearProductoComponent,
-    
+    CatalogoComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +52,7 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot(appRoutes),
     ColorPickerModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule 
   ],
   providers: [AuthService,AngularFireAuth,ProductoService,UploadService,],
   bootstrap: [AppComponent],

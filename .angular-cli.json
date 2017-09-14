@@ -19,9 +19,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "bootstrap/vendor/bootstrap/css/bootstrap.min.css",
+        "bootstrap/css/heroic-features.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "bootstrap/vendor/jquery/jquery.min.js",
+        "bootstrap/vendor/popper/popper.js",
+        "bootstrap/vendor/bootstrap/js/bootstrap.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
