@@ -1,0 +1,8 @@
+Total: {{carrito.montoTotal}} <button class="btn btn-secondary" type="button" (click) = "checkout()">Checkout</button>
+<div *ngFor="let item of carrito.items">
+    <img src="{{ item.producto.foto[0]}}" />
+    Nombre:{{item.producto.nombre}}
+    Precio: {{item.producto.precio}}
+    Cantidad:{{item.cantidad}}
+
+</div>

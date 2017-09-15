@@ -1,6 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { ProductoService } from '../productos/producto.service';
 import { Producto } from '../productos/producto';
+import { CarritoService } from '../carrito/carrito.service';
+import { Item } from '../carrito/carrito';
+
 @Component({
   selector: 'app-catalogo',
   templateUrl: './catalogo.component.html',
@@ -12,7 +15,9 @@ export class CatalogoComponent implements OnInit {
   private lista = [];
   private productoActual:Producto;
   private fotoActualModal:string;
-  constructor(public ps:ProductoService) {
+  private cantidad:number;
+
+  constructor(public ps:ProductoService,private cs: CarritoService) {
     this.producto = new Producto;
     this.productoActual = new Producto;
   }
@@ -26,5 +31,12 @@ export class CatalogoComponent implements OnInit {
   }
   seleccionarFoto(foto: string){
     this.fotoActualModal = foto;
+  }
+
+  agregarAlCarrito(p:Producto,cantidad:number) {
+    var item = new Item;
+    item.producto=p;
+    item.cantidad = cantidad;
+    this.cs.agregarAlCarrito(item);
   }
 }

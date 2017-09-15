@@ -32,7 +32,6 @@ export class ProductoService {
     this.lista=[];
     this.http.get(this.productosUrl).subscribe(data => {
       let producto:Producto;
-      let dat = new Data;
       for(let key in data){
         producto = data[key];
         this.lista.push(producto);
@@ -41,5 +40,6 @@ export class ProductoService {
     return this.lista;
 
   }
+
 
 }

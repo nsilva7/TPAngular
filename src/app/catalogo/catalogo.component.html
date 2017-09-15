@@ -1,4 +1,5 @@
 <!-- Page Content -->
+<app-carrito></app-carrito>
 <div class="container">
      <!-- Page Features -->
       <div class="row text-center">
@@ -15,9 +16,9 @@
             <div class="card-footer">
                 <div class="input-group">
                   <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button">Add to cart!</button>
+                    <button class="btn btn-secondary" type="button" (click) = "agregarAlCarrito(producto,cantidad)">Add to cart!</button>
                   </span>
-                  <input type="text" class="form-control" placeholder="Cantidad" aria-label="Cantidad">
+                  <input type="number" class="form-control" placeholder="Cantidad" aria-label="Cantidad" [(ngModel)]="cantidad">
                </div>
              </div>
           </div>

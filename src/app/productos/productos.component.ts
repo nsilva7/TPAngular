@@ -10,7 +10,6 @@ import { LocalDataSource } from 'ng2-smart-table';
 })
 export class ProductosComponent{
   private producto:Producto;
-  private data = [];
   private lista=[];
   public source: LocalDataSource;
 
@@ -18,7 +17,7 @@ export class ProductosComponent{
     nombre: {
       title:'Nombre',
       type:'text',
-      filter: true
+      filter: true,
     },
     descripcion: {
       title:'Descripcion',
@@ -42,10 +41,17 @@ export class ProductosComponent{
   }
   constructor(public ps:ProductoService) {
     this.producto = new Producto;
-    this.source = new LocalDataSource();
+    this.lista = this.ps.listarProductos();
+    console.log(this.lista);
+    this.source = new LocalDataSource(this.lista);
 
   }
   ngOnInit(){
-    this.source.load(this.ps.listarProductos());
+    console.log("init");
+    this.source.reset();
+  }
+
+  ngOnChange() {
+    console.log("change");
   }
 }

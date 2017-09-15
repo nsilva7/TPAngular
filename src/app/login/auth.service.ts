@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
+import { Usuario } from '../usuario';
+import { CarritoService } from '../carrito/carrito.service';
+
 
 @Injectable()
 export class AuthService {
   user: Observable<firebase.User>;
-  constructor(public firebaseAuth:AngularFireAuth) {
+  constructor(public firebaseAuth:AngularFireAuth,public cs:CarritoService) {
     this.user = firebaseAuth.authState;
   }
 
@@ -16,7 +19,7 @@ export class AuthService {
     .auth
     .createUserWithEmailAndPassword(email,password)
     .then(value => {
-      console.log('Succes!!',value);
+
     })
     .catch(err => {
       console.log('Something went wrong:',err.message);
@@ -29,7 +32,9 @@ export class AuthService {
     .auth
     .signInWithEmailAndPassword(email, password)
     .then(value => {
-      console.log('Nice, it worked!');
+      var uid = this.firebaseAuth.auth.currentUser.uid;
+      this.cs.tieneCarrito(uid);
+
     })
     .catch(err => {
       console.log('Something went wrong:',err.message);

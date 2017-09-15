@@ -18,6 +18,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { CarritoService } from './carrito/carrito.service';
+import { CarritoComponent } from './carrito/carrito.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const environment = {
   production: false,
@@ -35,7 +38,9 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'productos/crear',component: CrearProductoComponent },
   { path: 'productos', component: ProductosComponent },
-  { path: 'catalogo', component: CatalogoComponent}
+  { path: 'catalogo', component: CatalogoComponent},
+  { path: 'checkout', component: CheckoutComponent}
+
 ];
 
 @NgModule({
@@ -45,6 +50,8 @@ const appRoutes: Routes = [
     ProductosComponent,
     CrearProductoComponent,
     CatalogoComponent,
+    CarritoComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,9 +61,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ColorPickerModule,
     AngularFireDatabaseModule,
-    Ng2SmartTableModule 
+    Ng2SmartTableModule
   ],
-  providers: [AuthService,AngularFireAuth,ProductoService,UploadService,],
+  providers: [AuthService,AngularFireAuth,ProductoService,UploadService,CarritoService],
   bootstrap: [AppComponent],
 
 })
