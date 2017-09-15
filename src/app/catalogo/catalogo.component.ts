@@ -10,7 +10,8 @@ import { Producto } from '../productos/producto';
 export class CatalogoComponent implements OnInit {
   private producto:Producto;
   private lista = [];
-  private productoActual:Producto
+  private productoActual:Producto;
+  private fotoActualModal:string;
   constructor(public ps:ProductoService) {
     this.producto = new Producto;
     this.productoActual = new Producto;
@@ -21,6 +22,9 @@ export class CatalogoComponent implements OnInit {
   }
   seleccionarProducto(p:Producto){
     this.productoActual = p;
+    this.fotoActualModal = p.foto[0];
   }
-
+  seleccionarFoto(foto: string){
+    this.fotoActualModal = foto;
+  }
 }

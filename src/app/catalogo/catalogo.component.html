@@ -4,18 +4,18 @@
       <div class="row text-center">
         <div class="col-lg-3 col-md-6 mb-4" *ngFor="let producto of lista">
           <div class="card">
-            <a href="#" data-toggle="modal" data-target="#exampleModal" (click)="seleccionarProducto(producto)">
+            <a href="#" data-toggle="modal" data-target="#Modal" (click)="seleccionarProducto(producto)">
             <img class="card-img-top" src={{producto.foto[0]}} alt="">
             <div class="card-body">
               <h4 class="card-title">{{producto.nombre}}</h4>
-              <p class="card-text">{{producto.stock}} unidades en stock</p>
-              <p class="card-text">{{producto.precio}}$</p>
+              <h3 class="card-text">{{producto.stock}} unidades en stock</h3>
+              <h3 class="card-text">{{producto.precio}}$</h3>
             </div>
             </a>
             <div class="card-footer">
                 <div class="input-group">
                   <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button">Add to car!</button>
+                    <button class="btn btn-secondary" type="button">Add to cart!</button>
                   </span>
                   <input type="text" class="form-control" placeholder="Cantidad" aria-label="Cantidad">
                </div>
@@ -27,8 +27,8 @@
     </div>
     <!-- /.container -->
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">{{productoActual.nombre}}</h5>
@@ -36,12 +36,24 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        {{productoActual.nombre}}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modal-body colcentral">
+        <div class="col-xs-4 col-md-3 col1" >
+           <a class="thumbnail" *ngFor = "let foto of productoActual.foto" (click)="seleccionarFoto(foto)">
+               <img class="card-img-top car-mini" data-src={{foto}} alt="...">
+           </a>
+        </div>
+        <div class="col2">
+            <img class="card-img-top" data-src={{fotoActualModal}} alt="...">
+        </div>
+        <div class="col3">
+          <p>{{productoActual.nombre}}</p>
+          <p>{{productoActual.descripcion}}</p>
+          <p>{{productoActual.precio}}</p>
+          <p>{{productoActual.tipo}}</p>
+          <p>{{productoActual.color}}</p>
+          <p>{{productoActual.dimensiones}}</p>
+          <p>{{productoActual.caracteristicas}}</p>
+        </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,47 @@
+.container{
+  margin-top: 1%;
+}
+.card-img-top{
+  max-width:100%!important;
+  height: 100%!important
+}
+.modal-xl{
+  margin-right: 2%!important;
+  margin-top: 2%!important;
+  margin-left: 2%!important;
+  margin-bottom: 2%!important;
+  max-width: 100%!important;
+  height: 100%!important;
+}
+.colcentral{
+  width:100%;
+  display:inline;
+}
+.col1{
+  float: left;
+  width: 10%;
+}
+.col2{
+  float: left;
+  width: 45%;
+}.col3{
+  float: left;
+  width: 45%;
+}
+.modal-xl a:hover{
+  border: 2px solid #CED5D7;
+  cursor: pointer;
+}
+.card a:hover{
+  border: 1px solid #CED5D7;
+  text-decoration: none;
+}
+h4{
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #7B7878;
+}
+h3{
+  font-size: 100%;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #797676;
+}
