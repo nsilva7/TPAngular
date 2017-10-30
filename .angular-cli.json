@@ -26,7 +26,8 @@
       "scripts": [
         "bootstrap/vendor/jquery/jquery.min.js",
         "bootstrap/vendor/popper/popper.js",
-        "bootstrap/vendor/bootstrap/js/bootstrap.min.js"
+        "bootstrap/vendor/bootstrap/js/bootstrap.min.js",
+        "../node_modules/echarts/dist/echarts.min.js" 
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

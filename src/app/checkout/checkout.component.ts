@@ -24,8 +24,9 @@ export class CheckoutComponent implements OnInit {
   }
 
   checkout( carrito: Carrito){
+    let date = new Date();
     let cabecera = {
-      fecha: Date().toLocaleLowerCase(),
+      fecha: date.getDay + "/" +  date.getMonth + "/" +  date.getFullYear,
     }
 
     var detalles = [];

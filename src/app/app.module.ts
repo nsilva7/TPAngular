@@ -21,6 +21,12 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { CarritoService } from './carrito/carrito.service';
 import { CarritoComponent } from './carrito/carrito.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AngularEchartsModule } from 'ngx-echarts';
+import { ChartsComponent } from './charts/charts.component';
+import { Chart2Component } from './chart2/chart2.component';
+import { Chart3Component } from './chart3/chart3.component';
+import { Chart4Component } from './chart4/chart4.component';
+import { Chart1Component } from './chart1/chart1.component';
 
 export const environment = {
   production: false,
@@ -39,7 +45,12 @@ const appRoutes: Routes = [
   { path: 'productos/crear',component: CrearProductoComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'catalogo', component: CatalogoComponent},
-  { path: 'checkout', component: CheckoutComponent}
+  { path: 'checkout', component: CheckoutComponent},
+  { path: 'charts', component: ChartsComponent},
+  { path: 'chart1', component: Chart1Component},
+  { path: 'chart2', component: Chart2Component},
+  { path: 'chart3', component: Chart3Component},
+  { path: 'chart4', component: Chart4Component}
 
 ];
 
@@ -52,6 +63,11 @@ const appRoutes: Routes = [
     CatalogoComponent,
     CarritoComponent,
     CheckoutComponent,
+    ChartsComponent,
+    Chart2Component,
+    Chart3Component,
+    Chart4Component,
+    Chart1Component
   ],
   imports: [
     BrowserModule,
@@ -61,9 +77,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ColorPickerModule,
     AngularFireDatabaseModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    AngularEchartsModule
   ],
-  providers: [AuthService,AngularFireAuth,ProductoService,UploadService,CarritoService],
+  providers: [AuthService,AngularFireAuth,ProductoService,UploadService,CarritoService,Chart1Component,Chart2Component,Chart3Component,Chart4Component],
   bootstrap: [AppComponent],
 
 })
